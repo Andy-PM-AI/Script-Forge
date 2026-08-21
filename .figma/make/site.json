@@ -1,0 +1,10 @@
+{
+  "description": "Generates short drama scripts using AI to help writers create engaging stories efficiently through an intuitive web interface.",
+  "robots": {
+    "index": false
+  },
+  "accessibility": {
+    "addBypassLinks": false,
+    "ignoreReducedMotion": false
+  }
+}

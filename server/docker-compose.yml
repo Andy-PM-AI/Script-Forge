@@ -1,0 +1,20 @@
+services:
+  db:
+    image: postgres:16-alpine
+    container_name: scriptforge-db
+    environment:
+      POSTGRES_USER: scriptforge
+      POSTGRES_PASSWORD: scriptforge
+      POSTGRES_DB: scriptforge
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U scriptforge -d scriptforge"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+volumes:
+  pgdata:
